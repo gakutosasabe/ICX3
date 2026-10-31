@@ -918,14 +918,12 @@ const G = (() => {
   }
 
   // 画面サイズに合わせて 1280×720 の画面を拡大・縮小する（スマホのアドレスバーの分も考慮）
-  // 画面が縦長のとき（スマホの縦向き・向きロック中）は、ゲーム画面を90度回して横向きで表示する
   function fit() {
     const vv = window.visualViewport;
     const w = vv ? vv.width : window.innerWidth;
     const h = vv ? vv.height : window.innerHeight;
-    const portrait = h > w;
-    const s = portrait ? Math.min(h / 1280, w / 720) : Math.min(w / 1280, h / 720);
-    $('#game').style.transform = `translate(-50%, -50%)${portrait ? ' rotate(-90deg)' : ''} scale(${s})`;
+    const s = Math.min(w / 1280, h / 720);
+    $('#game').style.transform = `translate(-50%, -50%) scale(${s})`;
   }
 
   // スマホでは、はじめるときに全画面＋横向き固定を試す（対応していない端末では何もしない）
