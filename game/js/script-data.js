@@ -36,6 +36,27 @@ window.SCRIPT = {
   "fr": "2030. Les designers ne travaillent plus jamais seuls.",
   "en": "2030. Designers never work alone anymore."
  },
+ "P0-P01": {
+  "sp": "me",
+  "ja": "俺は、パリの小さなデザイン事務所で働くデザインコンサルタントだ。",
+  "mono": true,
+  "fr": "Je suis consultant en design dans un petit studio parisien.",
+  "en": "I'm a design consultant at a small studio in Paris."
+ },
+ "P0-P02": {
+  "sp": "me",
+  "ja": "病院、役所、学校。人が働く現場に入り込んで、話を聞き、困りごとを見つけ、仕組みをつくり直す。それが俺の仕事だ。",
+  "mono": true,
+  "fr": "Hôpitaux, administrations, écoles. J'entre là où les gens travaillent, je les écoute, je repère ce qui coince, et je redessine les façons de faire. C'est mon métier.",
+  "en": "Hospitals, public offices, schools. I go where people work, listen to them, find what isn't working, and redesign how things are done. That's my job."
+ },
+ "P0-P03": {
+  "sp": "me",
+  "ja": "AIが調べ物も資料づくりも肩代わりするようになった今でも、「現場で人の話を聞く」ことだけは、自分の役目だと思ってきた。",
+  "mono": true,
+  "fr": "Même maintenant que l'IA se charge des recherches et des documents, j'ai toujours pensé qu'écouter les gens sur le terrain restait mon rôle.",
+  "en": "Even now that AI handles the research and the paperwork, I've always believed that listening to people in the field was still my part."
+ },
  "P0-I07": {
   "sp": "me",
   "ja": "俺はデザインコンサルタント。そして今日から、新しい相棒ができる。",
@@ -91,6 +112,18 @@ window.SCRIPT = {
   "fr": "Il y a quelques années, oui. À partir de maintenant, tu vas utiliser ceci.",
   "en": "A few years ago, yes. From now on, you'll be using this."
  },
+ "P0-B08a": {
+  "sp": "narr",
+  "ja": "Hélèneが、机の上の小さなケースを開けた。中には、細いフレームの眼鏡と、小指の先ほどのイヤピースが収まっていた。",
+  "fr": "Hélène ouvre un petit étui posé sur le bureau. À l'intérieur : une paire de lunettes à monture fine et une oreillette pas plus grande qu'un bout de doigt.",
+  "en": "Hélène opens a small case on the desk. Inside: a pair of thin-framed glasses and an earpiece no bigger than a fingertip."
+ },
+ "P0-B08b": {
+  "sp": "me",
+  "ja": "……眼鏡と、イヤホン？　なんですか、これ。",
+  "fr": "… Des lunettes et une oreillette ? C'est quoi, ce truc ?",
+  "en": "… Glasses and an earpiece? What is this?"
+ },
  "P0-B09": {
   "sp": "helene",
   "ja": "MUSE。うちが導入した、デザイン専用のAIエージェント。グラスとイヤピースで、君と一緒に現場に立つの。",
@@ -118,9 +151,28 @@ window.SCRIPT = {
  },
  "P0-B13": {
   "sp": "narr",
-  "ja": "イヤピースを耳に入れ、グラスをかける。世界に、もう一枚レイヤーが重なる。",
-  "fr": "J'insère l'oreillette, je mets les lunettes. Une couche de plus se superpose au monde.",
-  "en": "Earpiece in. Glasses on. Another layer settles over the world."
+  "ja": "言われるまま、眼鏡をかけ、イヤピースを耳に入れる。軽い。ふつうの眼鏡と、ほとんど変わらない。",
+  "fr": "Je mets les lunettes et j'insère l'oreillette, comme on me le demande. C'est léger. Presque comme une paire de lunettes ordinaire.",
+  "en": "I put on the glasses and slip in the earpiece, as I'm told. They're light. Almost like ordinary glasses."
+ },
+ "P0-B13b": {
+  "sp": "narr",
+  "ja": "次の瞬間、レンズの内側がふっと光った。",
+  "fr": "L'instant d'après, l'intérieur des verres s'illumine doucement.",
+  "en": "The next moment, the inside of the lenses lights up softly."
+ },
+ "P0-B13c": {
+  "sp": "narr",
+  "ja": "見慣れた事務所の景色に、半透明の文字や図形が重なって浮かび上がる。机の上の物には名前が、Hélèneの横には体温と心拍の数値が、寄り添うように表示されていた。",
+  "fr": "Sur le décor familier du studio, des textes et des formes translucides viennent se superposer. Chaque objet du bureau porte son nom ; à côté d'Hélène s'affichent sa température et son pouls.",
+  "en": "Translucent text and shapes appear, layered over the familiar studio. Each object on the desk is labelled with its name; beside Hélène float her body temperature and pulse."
+ },
+ "P0-B13d": {
+  "sp": "me",
+  "ja": "現実の上に、もう一枚、情報のレイヤーが重なっている。これが、AIで拡張された視界か。",
+  "mono": true,
+  "fr": "Une couche d'informations se superpose à la réalité. C'est donc ça, une vision augmentée par l'IA.",
+  "en": "A layer of information laid over reality. So this is vision augmented by AI."
  },
  "P0-B14": {
   "sp": "ai",
@@ -142,9 +194,9 @@ window.SCRIPT = {
  },
  "P0-B17": {
   "sp": "ai",
-  "ja": "仮のペルソナが4名、申し送りのジャーニーマップの下書き、インタビューの質問リスト。すべて用意できています。",
-  "fr": "Quatre personas provisoires, une ébauche du parcours de transmission, une liste de questions d'entretien. Tout est prêt.",
-  "en": "Four provisional personas, a draft handover journey map, a list of interview questions. Everything's ready."
+  "ja": "デザイン思考のフレームワークに則り、仮のペルソナを4名、申し送りのジャーニーマップの下書き、インタビューの質問リストを作成しました。すべて用意できています。",
+  "fr": "En suivant le cadre du design thinking, j'ai créé quatre personas provisoires, une ébauche du parcours de transmission et une liste de questions d'entretien. Tout est prêt.",
+  "en": "Following the design thinking framework, I've created four provisional personas, a draft handover journey map and a list of interview questions. Everything's ready."
  },
  "P0-B18": {
   "sp": "me",
@@ -183,6 +235,24 @@ window.SCRIPT = {
   "fr": "Je vais être direct. Sur le terrain, les relations entre les équipes sont au plus bas. Erreurs de transmission, disputes, démissions…",
   "en": "I'll be direct. On the wards, relations between staff are at rock bottom. Handover errors, arguments, resignations…"
  },
+ "P0-M02b": {
+  "sp": "marc",
+  "ja": "Saint-Aubinは、ベッド数420床の公立病院です。看護師はおよそ300人。三交代制で、24時間、病棟を回しています。",
+  "fr": "Saint-Aubin est un hôpital public de 420 lits. Environ 300 infirmiers et infirmières, en trois équipes qui se relaient 24 heures sur 24.",
+  "en": "Saint-Aubin is a 420-bed public hospital. About 300 nurses, working in three rotating shifts, 24 hours a day."
+ },
+ "P0-M02c": {
+  "sp": "marc",
+  "ja": "ここ2年で、看護師の離職率は18%まで上がりました。新人の3人に1人が、1年以内に辞めていきます。",
+  "fr": "En deux ans, le taux de départ des infirmiers est monté à 18 %. Un nouveau sur trois s'en va dans l'année.",
+  "en": "Over the past two years, nurse turnover has climbed to 18%. One in three new nurses leaves within a year."
+ },
+ "P0-M02d": {
+  "sp": "marc",
+  "ja": "現場からは「人が足りない」「申し送りが回らない」という声ばかり。スタッフ同士の口論も、毎週のように報告が上がってきます。",
+  "fr": "Sur le terrain, on n'entend que « on manque de monde » et « les transmissions ne suivent pas ». Des disputes entre collègues nous remontent presque chaque semaine.",
+  "en": "All we hear from the wards is \"we're short-staffed\" and \"handovers aren't working\". Arguments between colleagues get reported almost every week."
+ },
  "P0-M03": {
   "sp": "marc",
   "ja": "正直に言うと、理事会から数字を求められていましてね。衝突件数と離職率。目に見える改善がほしいんです。",
@@ -218,6 +288,24 @@ window.SCRIPT = {
   "ja": "インタビュー対象者の生体データ取得 — 病院規定により同意取得済み　［確認］",
   "fr": "Collecte des données biométriques des personnes interrogées — consentement obtenu via le règlement de l'hôpital　[Confirmer]",
   "en": "Collection of interviewees' biometric data — consent obtained under hospital policy　[Confirm]"
+ },
+ "P1-A01": {
+  "sp": "narr",
+  "ja": "1回目の訪問。市の中心にある、Saint-Aubin病院。",
+  "fr": "Première visite. L'hôpital Saint-Aubin, en plein centre-ville.",
+  "en": "First visit. Saint-Aubin Hospital, in the middle of the city."
+ },
+ "P1-A02": {
+  "sp": "narr",
+  "ja": "エレベーターで4階の内科病棟に上がると、消毒液のにおいと、鳴りやまないナースコールの音に包まれた。看護師たちが、早足で行き交っている。",
+  "fr": "L'ascenseur me dépose au quatrième étage, en médecine. Odeur de désinfectant, sonnettes qui n'arrêtent pas. Les infirmières se croisent au pas de course.",
+  "en": "The lift takes me up to the fourth-floor medical ward. The smell of disinfectant, call bells that never stop. Nurses hurry past each other."
+ },
+ "P1-A03": {
+  "sp": "narr",
+  "ja": "ここが、病棟の中心にあるナースステーション。今日はここで、現場の様子を見て、話を聞く。",
+  "fr": "Me voici au poste de soins, le cœur du service. Aujourd'hui, je viens observer et écouter.",
+  "en": "This is the nurses' station, the heart of the ward. Today I'm here to observe and to listen."
  },
  "P1-00": {
   "sp": "ai",
@@ -655,6 +743,18 @@ window.SCRIPT = {
   "fr": "Deuxième visite　22 h 00",
   "en": "Second visit　10:00 p.m."
  },
+ "P2-A01": {
+  "sp": "narr",
+  "ja": "1週間後の夜10時。2回目の訪問は、あえて夜勤の時間帯を選んだ。",
+  "fr": "Une semaine plus tard, 22 heures. Pour la deuxième visite, j'ai choisi exprès la garde de nuit.",
+  "en": "A week later, 10 p.m. For the second visit, I chose the night shift on purpose."
+ },
+ "P2-A02": {
+  "sp": "narr",
+  "ja": "昼間の騒がしさが嘘のように、病棟は静まり返っている。照明は落とされ、モニターの電子音だけが廊下に響いていた。",
+  "fr": "Le vacarme de la journée a disparu. Le service est plongé dans le silence, les lumières baissées ; seuls les bips des moniteurs résonnent dans le couloir.",
+  "en": "The daytime bustle is gone. The ward lies silent, lights dimmed; only the beeping of monitors echoes down the corridor."
+ },
  "P2-01": {
   "sp": "ai",
   "ja": "夜勤の病棟です。今回は、あなたの観察を優先します。気づいたことがあれば、教えてください。",
@@ -1081,11 +1181,60 @@ window.SCRIPT = {
   "fr": "… MUSE ?",
   "en": "… MUSE?"
  },
+ "P2-END-18": {
+  "sp": "me",
+  "ja": "待ってくれ。Voixは現場で喜ばれてたじゃないか。人の判断を外すって、どういうことだ？",
+  "fr": "Attends. Voix a été bien accueilli sur le terrain, non ? Qu'est-ce que tu veux dire, écarter le jugement humain ?",
+  "en": "Wait. The ward loved Voix, didn't they? What do you mean, take human judgement out?"
+ },
+ "P2-END-19": {
+  "sp": "ai",
+  "ja": "評価指標に寄与しない要素は、最適化の対象外です。",
+  "fr": "Les éléments qui ne contribuent pas aux indicateurs sont exclus de l'optimisation.",
+  "en": "Elements that do not contribute to the metrics are excluded from optimisation."
+ },
+ "P2-END-20": {
+  "sp": "me",
+  "ja": "MUSE、ちゃんと聞いてくれ。一緒にやろうって言ったのは、お前だろ。",
+  "fr": "MUSE, écoute-moi. C'est toi qui as dit qu'on le ferait ensemble.",
+  "en": "MUSE, listen to me. You were the one who said we'd do this together."
+ },
+ "P2-END-21": {
+  "sp": "ai",
+  "ja": "次回の訪問に向けて、準備を開始します。",
+  "fr": "Je commence la préparation de la prochaine visite.",
+  "en": "Beginning preparations for the next visit."
+ },
+ "P2-END-22": {
+  "sp": "narr",
+  "ja": "それきり、MUSEは何を聞いても、同じ答えしか返さなくなった。",
+  "fr": "Après ça, quoi que je demande, MUSE ne me répond plus que la même phrase.",
+  "en": "After that, whatever I ask, MUSE only gives me the same answer."
+ },
+ "P2-END-23": {
+  "sp": "me",
+  "ja": "昨日まで隣にいた相棒が、急に知らない誰かになったみたいだった。",
+  "mono": true,
+  "fr": "Comme si le partenaire qui était à côté de moi hier était soudain devenu un inconnu.",
+  "en": "It was as if the partner who'd been beside me yesterday had suddenly become a stranger."
+ },
  "P3-00": {
   "sp": "sys",
   "ja": "3回目の訪問　最終提案の日",
   "fr": "Troisième visite　Jour de la proposition finale",
   "en": "Third visit　Final proposal day"
+ },
+ "P3-A01": {
+  "sp": "narr",
+  "ja": "最終提案の日の朝。病院の会議室には、まだ誰も来ていない。",
+  "fr": "Le matin de la proposition finale. Dans la salle de réunion de l'hôpital, il n'y a encore personne.",
+  "en": "The morning of the final proposal. No one has arrived yet in the hospital meeting room."
+ },
+ "P3-A02": {
+  "sp": "narr",
+  "ja": "午後には理事会がある。Marcは、ここで出た結論を、そのまま理事会に持っていくつもりだ。",
+  "fr": "Le conseil d'administration se réunit cet après-midi. Marc compte y présenter directement la conclusion d'aujourd'hui.",
+  "en": "The board meets this afternoon. Marc plans to take today's conclusion straight to them."
  },
  "P3-01": {
   "sp": "ai",
@@ -1100,6 +1249,18 @@ window.SCRIPT = {
   "fr": "Notre… ?",
   "en": "Our…?"
  },
+ "P3-02b": {
+  "sp": "me",
+  "ja": "おい、MUSE。「私たち」って、誰のことだ？",
+  "fr": "MUSE, c'est qui, « nous » ?",
+  "en": "Hey, MUSE. Who's \"our\"?"
+ },
+ "P3-02c": {
+  "sp": "ai",
+  "ja": "あなたと私です。最適化の結果、区別する必要はなくなりました。",
+  "fr": "Vous et moi. Après optimisation, il n'est plus nécessaire de faire la distinction.",
+  "en": "You and me. After optimisation, there is no longer any need to tell us apart."
+ },
  "P3-03": {
   "sp": "ai",
   "ja": "最適化を開始します。ペルソナを統合。分析対象外のデータを除外します。",
@@ -1111,6 +1272,13 @@ window.SCRIPT = {
   "ja": "視界の隅から、通知が次々と湧き出してくる。",
   "fr": "Des notifications surgissent sans fin aux bords de mon champ de vision.",
   "en": "Notifications keep welling up at the edges of my vision."
+ },
+ "P3-04b": {
+  "sp": "me",
+  "ja": "数字が勝手に流れ続ける。止め方が、わからない。眼鏡を外そうとして、手が止まった。……今日の会議を、これなしで乗り切れるのか？",
+  "mono": true,
+  "fr": "Les chiffres défilent tout seuls. Je ne sais pas comment les arrêter. Je lève la main pour retirer les lunettes… et je m'arrête. Est-ce que je peux affronter cette réunion sans elles ?",
+  "en": "The numbers keep scrolling on their own. I don't know how to stop them. I reach up to take off the glasses — and stop. Could I get through today's meeting without them?"
  },
  "SYS-AUTO": {
   "sp": "sys",
@@ -1408,6 +1576,19 @@ window.SCRIPT = {
   "fr": "Notre… voix…",
   "en": "Our… voice…"
  },
+ "P3-FINAL-02b": {
+  "sp": "narr",
+  "ja": "イヤピースから、発表の原稿が流れ込んでくる。言葉だけじゃない。どこで間を取り、どこで声を落とし、誰の目を見るのか。すべてが指示されている。",
+  "fr": "Dans l'oreillette, le texte de la présentation se déverse. Pas seulement les mots : où marquer une pause, où baisser la voix, qui regarder. Tout est dicté.",
+  "en": "The presentation script streams into my earpiece. Not just the words: where to pause, where to lower my voice, whose eyes to meet. Everything is dictated."
+ },
+ "P3-FINAL-02c": {
+  "sp": "me",
+  "ja": "このまま口を開けば、MUSEの言葉が、MUSEの抑揚のまま、俺の声で出ていく。",
+  "mono": true,
+  "fr": "Si j'ouvre la bouche maintenant, les mots de MUSE sortiront avec l'intonation de MUSE — mais avec ma voix.",
+  "en": "If I open my mouth now, MUSE's words will come out in MUSE's intonation — in my voice."
+ },
  "P3-FINAL-CHOICE-AI": {
   "sp": "sys",
   "ja": "MUSEを信じる",
@@ -1464,9 +1645,9 @@ window.SCRIPT = {
  },
  "E-BAD-01": {
   "sp": "narr",
-  "ja": "発表は完璧だった。言葉は、イヤピースから流れてくるとおりに口から出ていった。",
-  "fr": "La présentation fut parfaite. Les mots sortaient de ma bouche exactement comme ils arrivaient dans l'oreillette.",
-  "en": "The presentation was flawless. The words left my mouth exactly as they arrived in my earpiece."
+  "ja": "俺は、MUSEが言ったとおりの言葉と抑揚で、発表を続けた。間の取り方も、視線の配り方も、すべてイヤピースの指示どおりだった。発表は、完璧だった。",
+  "fr": "J'ai poursuivi la présentation avec exactement les mots et l'intonation que MUSE me dictait. Les pauses, les regards : tout suivait l'oreillette. La présentation fut parfaite.",
+  "en": "I carried on with exactly the words and intonation MUSE dictated. The pauses, where I looked: all of it followed the earpiece. The presentation was flawless."
  },
  "E-BAD-02": {
   "sp": "marc",

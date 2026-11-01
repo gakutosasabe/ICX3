@@ -472,3 +472,24 @@ body { touch-action: manipulation; -webkit-tap-highlight-color: transparent; -we
 @keyframes rotatehint { 0%, 30% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
 .rotate-note { margin-top: 22px; padding: 12px 16px; max-width: 320px; border: 1px solid rgba(251, 191, 36, .5); border-radius: 10px; background: rgba(251, 191, 36, .08); color: #fde68a; font-size: 13px; }
 .rotate-note p + p { margin-top: 4px; color: #fcd34d; opacity: .8; }
+
+/* ---------- PHASE 3：視界の人物に重なる数値（AR表示） ---------- */
+#ar { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.ar-face {
+  position: absolute; border: 2px solid rgba(248, 113, 113, .85); border-radius: 6px;
+  box-shadow: 0 0 14px rgba(248, 113, 113, .45), inset 0 0 18px rgba(248, 113, 113, .15);
+  animation: arlock 1.2s ease-in-out infinite;
+}
+.ar-face::before, .ar-face::after { content: ""; position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px; border: 1px solid rgba(248, 113, 113, .7); border-radius: 50%; }
+.ar-face::after { width: 2px; height: 2px; margin: -1px; background: #f87171; }
+.ar-face-label { position: absolute; top: -20px; left: -2px; padding: 1px 6px; background: rgba(127, 29, 29, .85); color: #fecaca; font: 600 10px var(--font-ai); letter-spacing: .1em; white-space: nowrap; }
+.ar-tags { position: absolute; display: flex; flex-direction: column; gap: 4px; }
+.ar-tag {
+  display: flex; gap: 10px; justify-content: space-between; min-width: 170px; padding: 3px 8px;
+  background: rgba(11, 19, 36, .78); border-left: 3px solid #f87171; color: #e0f2fe; font: 12px var(--font-ai);
+
+}
+.ar-tag .k { color: #fca5a5; }
+.ar-tag:nth-child(2) { animation-delay: .08s; } .ar-tag:nth-child(3) { animation-delay: .16s; } .ar-tag:nth-child(4) { animation-delay: .24s; }
+@keyframes arlock { 50% { transform: scale(1.03); } }
+@keyframes arin { from { opacity: 0; transform: translateX(-8px); } }

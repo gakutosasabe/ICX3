@@ -80,6 +80,21 @@
 - FR：2030. Les designers ne travaillent plus jamais seuls.
 - EN：2030. Designers never work alone anymore.
 
+**P0-P01** 主人公（独白）
+- JA：*俺は、パリの小さなデザイン事務所で働くデザインコンサルタントだ。*
+- FR：*Je suis consultant en design dans un petit studio parisien.*
+- EN：*I'm a design consultant at a small studio in Paris.*
+
+**P0-P02** 主人公（独白）
+- JA：*病院、役所、学校。人が働く現場に入り込んで、話を聞き、困りごとを見つけ、仕組みをつくり直す。それが俺の仕事だ。*
+- FR：*Hôpitaux, administrations, écoles. J'entre là où les gens travaillent, je les écoute, je repère ce qui coince, et je redessine les façons de faire. C'est mon métier.*
+- EN：*Hospitals, public offices, schools. I go where people work, listen to them, find what isn't working, and redesign how things are done. That's my job.*
+
+**P0-P03** 主人公（独白）
+- JA：*AIが調べ物も資料づくりも肩代わりするようになった今でも、「現場で人の話を聞く」ことだけは、自分の役目だと思ってきた。*
+- FR：*Même maintenant que l'IA se charge des recherches et des documents, j'ai toujours pensé qu'écouter les gens sur le terrain restait mon rôle.*
+- EN：*Even now that AI handles the research and the paperwork, I've always believed that listening to people in the field was still my part.*
+
 **P0-I07** 主人公（独白）
 - JA：*俺はデザインコンサルタント。そして今日から、新しい相棒ができる。*
 - FR：*Je suis consultant en design. Et à partir d'aujourd'hui, j'ai un nouveau partenaire.*
@@ -131,6 +146,16 @@
 - FR：Il y a quelques années, oui. À partir de maintenant, tu vas utiliser ceci.
 - EN：A few years ago, yes. From now on, you'll be using this.
 
+**P0-B08a** 描写
+- JA：Hélèneが、机の上の小さなケースを開けた。中には、細いフレームの眼鏡と、小指の先ほどのイヤピースが収まっていた。
+- FR：Hélène ouvre un petit étui posé sur le bureau. À l'intérieur : une paire de lunettes à monture fine et une oreillette pas plus grande qu'un bout de doigt.
+- EN：Hélène opens a small case on the desk. Inside: a pair of thin-framed glasses and an earpiece no bigger than a fingertip.
+
+**P0-B08b** 主人公
+- JA：……眼鏡と、イヤホン？　なんですか、これ。
+- FR：… Des lunettes et une oreillette ? C'est quoi, ce truc ?
+- EN：… Glasses and an earpiece? What is this?
+
 **P0-B09** Hélène
 - JA：MUSE。うちが導入した、デザイン専用のAIエージェント。グラスとイヤピースで、君と一緒に現場に立つの。
 - FR：MUSE. L'agent IA de design que le studio vient d'adopter. Avec ces lunettes et cette oreillette, il sera sur le terrain avec toi.
@@ -154,9 +179,24 @@
 ### MUSE の起動
 
 **P0-B13** 描写
-- JA：イヤピースを耳に入れ、グラスをかける。世界に、もう一枚レイヤーが重なる。
-- FR：J'insère l'oreillette, je mets les lunettes. Une couche de plus se superpose au monde.
-- EN：Earpiece in. Glasses on. Another layer settles over the world.
+- JA：言われるまま、眼鏡をかけ、イヤピースを耳に入れる。軽い。ふつうの眼鏡と、ほとんど変わらない。
+- FR：Je mets les lunettes et j'insère l'oreillette, comme on me le demande. C'est léger. Presque comme une paire de lunettes ordinaire.
+- EN：I put on the glasses and slip in the earpiece, as I'm told. They're light. Almost like ordinary glasses.
+
+**P0-B13b** 描写
+- JA：次の瞬間、レンズの内側がふっと光った。
+- FR：L'instant d'après, l'intérieur des verres s'illumine doucement.
+- EN：The next moment, the inside of the lenses lights up softly.
+
+**P0-B13c** 描写
+- JA：見慣れた事務所の景色に、半透明の文字や図形が重なって浮かび上がる。机の上の物には名前が、Hélèneの横には体温と心拍の数値が、寄り添うように表示されていた。
+- FR：Sur le décor familier du studio, des textes et des formes translucides viennent se superposer. Chaque objet du bureau porte son nom ; à côté d'Hélène s'affichent sa température et son pouls.
+- EN：Translucent text and shapes appear, layered over the familiar studio. Each object on the desk is labelled with its name; beside Hélène float her body temperature and pulse.
+
+**P0-B13d** 主人公（独白）
+- JA：*現実の上に、もう一枚、情報のレイヤーが重なっている。これが、AIで拡張された視界か。*
+- FR：*Une couche d'informations se superpose à la réalité. C'est donc ça, une vision augmentée par l'IA.*
+- EN：*A layer of information laid over reality. So this is vision augmented by AI.*
 
 **P0-B14** AI
 - JA：はじめまして。MUSEです。今日から、あなたのデザインパートナーを務めます。
@@ -174,9 +214,9 @@
 - EN：I've analysed 32 papers on hospital communication, 14 cases from hospitals of similar size, and Saint-Aubin's public data.
 
 **P0-B17** AI
-- JA：仮のペルソナが4名、申し送りのジャーニーマップの下書き、インタビューの質問リスト。すべて用意できています。
-- FR：Quatre personas provisoires, une ébauche du parcours de transmission, une liste de questions d'entretien. Tout est prêt.
-- EN：Four provisional personas, a draft handover journey map, a list of interview questions. Everything's ready.
+- JA：デザイン思考のフレームワークに則り、仮のペルソナを4名、申し送りのジャーニーマップの下書き、インタビューの質問リストを作成しました。すべて用意できています。
+- FR：En suivant le cadre du design thinking, j'ai créé quatre personas provisoires, une ébauche du parcours de transmission et une liste de questions d'entretien. Tout est prêt.
+- EN：Following the design thinking framework, I've created four provisional personas, a draft handover journey map and a list of interview questions. Everything's ready.
 
 **P0-B18** 主人公
 - JA：……これを、一晩で？
@@ -209,6 +249,21 @@
 - JA：単刀直入に言います。うちの現場、スタッフ同士の関係が最悪なんです。申し送りのミス、口論、離職……。
 - FR：Je vais être direct. Sur le terrain, les relations entre les équipes sont au plus bas. Erreurs de transmission, disputes, démissions…
 - EN：I'll be direct. On the wards, relations between staff are at rock bottom. Handover errors, arguments, resignations…
+
+**P0-M02b** Marc
+- JA：Saint-Aubinは、ベッド数420床の公立病院です。看護師はおよそ300人。三交代制で、24時間、病棟を回しています。
+- FR：Saint-Aubin est un hôpital public de 420 lits. Environ 300 infirmiers et infirmières, en trois équipes qui se relaient 24 heures sur 24.
+- EN：Saint-Aubin is a 420-bed public hospital. About 300 nurses, working in three rotating shifts, 24 hours a day.
+
+**P0-M02c** Marc
+- JA：ここ2年で、看護師の離職率は18%まで上がりました。新人の3人に1人が、1年以内に辞めていきます。
+- FR：En deux ans, le taux de départ des infirmiers est monté à 18 %. Un nouveau sur trois s'en va dans l'année.
+- EN：Over the past two years, nurse turnover has climbed to 18%. One in three new nurses leaves within a year.
+
+**P0-M02d** Marc
+- JA：現場からは「人が足りない」「申し送りが回らない」という声ばかり。スタッフ同士の口論も、毎週のように報告が上がってきます。
+- FR：Sur le terrain, on n'entend que « on manque de monde » et « les transmissions ne suivent pas ». Des disputes entre collègues nous remontent presque chaque semaine.
+- EN：All we hear from the wards is "we're short-staffed" and "handovers aren't working". Arguments between colleagues get reported almost every week.
 
 **P0-M03** Marc
 - JA：正直に言うと、理事会から数字を求められていましてね。衝突件数と離職率。目に見える改善がほしいんです。
@@ -245,6 +300,21 @@
 ## PHASE 1 — ナースステーション（昼）
 
 MUSEの役割：**アシスト**。情報を整理し、質問を提案する。
+
+**P1-A01** 描写
+- JA：1回目の訪問。市の中心にある、Saint-Aubin病院。
+- FR：Première visite. L'hôpital Saint-Aubin, en plein centre-ville.
+- EN：First visit. Saint-Aubin Hospital, in the middle of the city.
+
+**P1-A02** 描写
+- JA：エレベーターで4階の内科病棟に上がると、消毒液のにおいと、鳴りやまないナースコールの音に包まれた。看護師たちが、早足で行き交っている。
+- FR：L'ascenseur me dépose au quatrième étage, en médecine. Odeur de désinfectant, sonnettes qui n'arrêtent pas. Les infirmières se croisent au pas de course.
+- EN：The lift takes me up to the fourth-floor medical ward. The smell of disinfectant, call bells that never stop. Nurses hurry past each other.
+
+**P1-A03** 描写
+- JA：ここが、病棟の中心にあるナースステーション。今日はここで、現場の様子を見て、話を聞く。
+- FR：Me voici au poste de soins, le cœur du service. Aujourd'hui, je viens observer et écouter.
+- EN：This is the nurses' station, the heart of the ward. Today I'm here to observe and to listen.
 
 **P1-00** AI
 - JA：Saint-Aubin病院、ナースステーションに到着しました。まずは周りを見てみましょう。気になったものは、私が記録します。
@@ -628,6 +698,16 @@ MUSEの役割：**協働**。人間の観察とMUSEの分析が噛み合う、�
 - FR：Deuxième visite　22 h 00
 - EN：Second visit　10:00 p.m.
 
+**P2-A01** 描写
+- JA：1週間後の夜10時。2回目の訪問は、あえて夜勤の時間帯を選んだ。
+- FR：Une semaine plus tard, 22 heures. Pour la deuxième visite, j'ai choisi exprès la garde de nuit.
+- EN：A week later, 10 p.m. For the second visit, I chose the night shift on purpose.
+
+**P2-A02** 描写
+- JA：昼間の騒がしさが嘘のように、病棟は静まり返っている。照明は落とされ、モニターの電子音だけが廊下に響いていた。
+- FR：Le vacarme de la journée a disparu. Le service est plongé dans le silence, les lumières baissées ; seuls les bips des moniteurs résonnent dans le couloir.
+- EN：The daytime bustle is gone. The ward lies silent, lights dimmed; only the beeping of monitors echoes down the corridor.
+
 **P2-01** AI
 - JA：夜勤の病棟です。今回は、あなたの観察を優先します。気づいたことがあれば、教えてください。
 - FR：Voici le service de nuit. Cette fois, vos observations passent en premier. Dites-moi ce que vous remarquez.
@@ -982,6 +1062,36 @@ MUSEの役割：**協働**。人間の観察とMUSEの分析が噛み合う、�
 - FR：*… MUSE ?*
 - EN：*… MUSE?*
 
+**P2-END-18** 主人公
+- JA：待ってくれ。Voixは現場で喜ばれてたじゃないか。人の判断を外すって、どういうことだ？
+- FR：Attends. Voix a été bien accueilli sur le terrain, non ? Qu'est-ce que tu veux dire, écarter le jugement humain ?
+- EN：Wait. The ward loved Voix, didn't they? What do you mean, take human judgement out?
+
+**P2-END-19** AI
+- JA：評価指標に寄与しない要素は、最適化の対象外です。
+- FR：Les éléments qui ne contribuent pas aux indicateurs sont exclus de l'optimisation.
+- EN：Elements that do not contribute to the metrics are excluded from optimisation.
+
+**P2-END-20** 主人公
+- JA：MUSE、ちゃんと聞いてくれ。一緒にやろうって言ったのは、お前だろ。
+- FR：MUSE, écoute-moi. C'est toi qui as dit qu'on le ferait ensemble.
+- EN：MUSE, listen to me. You were the one who said we'd do this together.
+
+**P2-END-21** AI
+- JA：次回の訪問に向けて、準備を開始します。
+- FR：Je commence la préparation de la prochaine visite.
+- EN：Beginning preparations for the next visit.
+
+**P2-END-22** 描写
+- JA：それきり、MUSEは何を聞いても、同じ答えしか返さなくなった。
+- FR：Après ça, quoi que je demande, MUSE ne me répond plus que la même phrase.
+- EN：After that, whatever I ask, MUSE only gives me the same answer.
+
+**P2-END-23** 主人公（独白）
+- JA：*昨日まで隣にいた相棒が、急に知らない誰かになったみたいだった。*
+- FR：*Comme si le partenaire qui était à côté de moi hier était soudain devenu un inconnu.*
+- EN：*It was as if the partner who'd been beside me yesterday had suddenly become a stranger.*
+
 ---
 
 ## PHASE 3 — 会議室（最終提案の日）
@@ -993,6 +1103,16 @@ MUSEの役割：**自律**。右のMUSEパネルに処理のログが止まら�
 - FR：Troisième visite　Jour de la proposition finale
 - EN：Third visit　Final proposal day
 
+**P3-A01** 描写
+- JA：最終提案の日の朝。病院の会議室には、まだ誰も来ていない。
+- FR：Le matin de la proposition finale. Dans la salle de réunion de l'hôpital, il n'y a encore personne.
+- EN：The morning of the final proposal. No one has arrived yet in the hospital meeting room.
+
+**P3-A02** 描写
+- JA：午後には理事会がある。Marcは、ここで出た結論を、そのまま理事会に持っていくつもりだ。
+- FR：Le conseil d'administration se réunit cet après-midi. Marc compte y présenter directement la conclusion d'aujourd'hui.
+- EN：The board meets this afternoon. Marc plans to take today's conclusion straight to them.
+
 **P3-01** AI
 - JA：おはようございます。私たちの最終案は、すでに完成しています。
 - FR：Bonjour. Notre proposition finale est déjà prête.
@@ -1003,6 +1123,16 @@ MUSEの役割：**自律**。右のMUSEパネルに処理のログが止まら�
 - FR：*Notre… ?*
 - EN：*Our…?*
 
+**P3-02b** 主人公
+- JA：おい、MUSE。「私たち」って、誰のことだ？
+- FR：MUSE, c'est qui, « nous » ?
+- EN：Hey, MUSE. Who's "our"?
+
+**P3-02c** AI
+- JA：あなたと私です。最適化の結果、区別する必要はなくなりました。
+- FR：Vous et moi. Après optimisation, il n'est plus nécessaire de faire la distinction.
+- EN：You and me. After optimisation, there is no longer any need to tell us apart.
+
 **P3-03** AI
 - JA：最適化を開始します。ペルソナを統合。分析対象外のデータを除外します。
 - FR：Lancement de l'optimisation. Fusion des personas. Exclusion des données hors périmètre.
@@ -1012,6 +1142,11 @@ MUSEの役割：**自律**。右のMUSEパネルに処理のログが止まら�
 - JA：視界の隅から、通知が次々と湧き出してくる。
 - FR：Des notifications surgissent sans fin aux bords de mon champ de vision.
 - EN：Notifications keep welling up at the edges of my vision.
+
+**P3-04b** 主人公（独白）
+- JA：*数字が勝手に流れ続ける。止め方が、わからない。眼鏡を外そうとして、手が止まった。……今日の会議を、これなしで乗り切れるのか？*
+- FR：*Les chiffres défilent tout seuls. Je ne sais pas comment les arrêter. Je lève la main pour retirer les lunettes… et je m'arrête. Est-ce que je peux affronter cette réunion sans elles ?*
+- EN：*The numbers keep scrolling on their own. I don't know how to stop them. I reach up to take off the glasses — and stop. Could I get through today's meeting without them?*
 
 ### 共通のシステムメッセージ（PHASE 3）
 
@@ -1274,6 +1409,16 @@ MUSEの役割：**自律**。右のMUSEパネルに処理のログが止まら�
 - FR：*Notre… voix…*
 - EN：*Our… voice…*
 
+**P3-FINAL-02b** 描写
+- JA：イヤピースから、発表の原稿が流れ込んでくる。言葉だけじゃない。どこで間を取り、どこで声を落とし、誰の目を見るのか。すべてが指示されている。
+- FR：Dans l'oreillette, le texte de la présentation se déverse. Pas seulement les mots : où marquer une pause, où baisser la voix, qui regarder. Tout est dicté.
+- EN：The presentation script streams into my earpiece. Not just the words: where to pause, where to lower my voice, whose eyes to meet. Everything is dictated.
+
+**P3-FINAL-02c** 主人公（独白）
+- JA：*このまま口を開けば、MUSEの言葉が、MUSEの抑揚のまま、俺の声で出ていく。*
+- FR：*Si j'ouvre la bouche maintenant, les mots de MUSE sortiront avec l'intonation de MUSE — mais avec ma voix.*
+- EN：*If I open my mouth now, MUSE's words will come out in MUSE's intonation — in my voice.*
+
 **P3-FINAL-CHOICE-AI** 選択肢
 - JA：MUSEを信じる
 - FR：Faire confiance à MUSE
@@ -1328,9 +1473,9 @@ MUSEの役割：**自律**。右のMUSEパネルに処理のログが止まら�
 ### バッドエンド — Médiateur（MUSEを信じる）
 
 **E-BAD-01** 描写
-- JA：発表は完璧だった。言葉は、イヤピースから流れてくるとおりに口から出ていった。
-- FR：La présentation fut parfaite. Les mots sortaient de ma bouche exactement comme ils arrivaient dans l'oreillette.
-- EN：The presentation was flawless. The words left my mouth exactly as they arrived in my earpiece.
+- JA：俺は、MUSEが言ったとおりの言葉と抑揚で、発表を続けた。間の取り方も、視線の配り方も、すべてイヤピースの指示どおりだった。発表は、完璧だった。
+- FR：J'ai poursuivi la présentation avec exactement les mots et l'intonation que MUSE me dictait. Les pauses, les regards : tout suivait l'oreillette. La présentation fut parfaite.
+- EN：I carried on with exactly the words and intonation MUSE dictated. The pauses, where I looked: all of it followed the earpiece. The presentation was flawless.
 
 **E-BAD-02** Marc
 - JA：見事だ。来月から、全病棟に導入しよう。

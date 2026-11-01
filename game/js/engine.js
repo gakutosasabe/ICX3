@@ -210,6 +210,7 @@ const G = (() => {
   }
 
   function renderPanel() {
+    renderAR();
     const panel = $('#ai-panel');
     panel.hidden = !S.aiOn;
     if (!S.aiOn) return;
@@ -235,6 +236,37 @@ const G = (() => {
     const log = $('#ai-log');
     log.innerHTML = '';
     S.log.forEach(({ key, vars }) => log.append(el('div', 'log-row', '› ' + t(key, vars))));
+  }
+
+  // PHASE 3：MUSEの数値が、パネルからあふれて、視界の中の人物に直接重なる
+  function renderAR() {
+    const ar = $('#ar');
+    const c = $('#char');
+    const on = S.aiOn && S.phase === 3 && !$('#game').classList.contains('calm') && S.talking && S.bio && !c.hidden;
+    ar.hidden = !on;
+    if (!on) return;
+    ar.innerHTML = '';
+    const cw = c.offsetWidth;
+    const ch = c.offsetHeight;
+    // 顔のまわりの照準
+    const reticle = el('div', 'ar-face');
+    Object.assign(reticle.style, { left: c.offsetLeft + cw * 0.12 + 'px', top: c.offsetTop + ch * 0.03 + 'px', width: cw * 0.76 + 'px', height: ch * 0.38 + 'px' });
+    reticle.append(el('span', 'ar-face-label', 'FACE LOCK  ' + CHARS[S.talking].name.toUpperCase()));
+    ar.append(reticle);
+    // 人物の横に並ぶ数値
+    const tags = el('div', 'ar-tags');
+    Object.assign(tags.style, { left: c.offsetLeft + cw * 0.92 + 'px', top: c.offsetTop + ch * 0.1 + 'px' });
+    [
+      [u('ui.temp'), `${S.bio.temp.toFixed(1)}℃`],
+      [u('ui.pulse'), `${S.bio.pulse} bpm`],
+      [u('ui.emotion'), L(S.bio.emo)],
+      [L(STR.arAgree), `${80 + Math.floor(Math.random() * 15)}%`],
+    ].forEach(([k, v]) => {
+      const row = el('div', 'ar-tag');
+      row.append(el('span', 'k', k), el('span', 'v', v));
+      tags.append(row);
+    });
+    ar.append(tags);
   }
 
   function renderSynth() {
@@ -305,6 +337,7 @@ const G = (() => {
       img.src = src;
       img.alt = CHARS[who] ? CHARS[who].name : '';
       img.draggable = false;
+      img.onload = () => renderAR();
       return img;
     }
     const f = el('div', 'figure');

@@ -77,10 +77,20 @@ const CONV = {
   },
 };
 
+// Hélèneからのメッセージは、ビデオ通話の枠で立ち絵を出す
+async function heleneMessage(key) {
+  G.talk('helene', null, { video: true });
+  await G.say(key);
+  G.endTalk();
+}
+
 async function intro() {
   Sound.bgm('intro');
   G.cinematic(true);
-  await G.seq(range('P0-I', 1, 7));
+  await G.seq(range('P0-I', 1, 6));
+  // 主人公がどんな人物で、どんな仕事をしているか
+  await G.seq(range('P0-P', 1, 3));
+  await G.say('P0-I07');
   G.clearLine();
   G.cinematic(false);
 }
@@ -94,15 +104,21 @@ async function prologue() {
   await G.say('P0-B01');
   G.talk('helene');
   await G.seq(range('P0-B', 2, 7));
+  await G.say('P0-B08');
+  // 机の上のケースから、眼鏡とイヤピースが出てくる
   G.card('device');
-  await G.seq(range('P0-B', 8, 12));
+  await G.seq(['P0-B08a', 'P0-B08b']);
+  await G.seq(range('P0-B', 9, 12));
   G.card(null);
   G.endTalk();
 
-  // MUSE の起動と、先に済ませていたリサーチ
+  // MUSE の起動：眼鏡をかけると、現実の上に情報のレイヤーが重なる
   await G.say('P0-B13');
-  G.aiOn(true);
   Sound.sfx('boot');
+  await G.say('P0-B13b');
+  G.aiOn(true);
+  G.talk('helene', BIO.helene0);
+  await G.seq(['P0-B13c', 'P0-B13d']);
   await G.say('P0-B14');
   G.card('research');
   await G.say('P0-B15');
@@ -112,9 +128,9 @@ async function prologue() {
   G.talk('helene');
   await G.say('P0-B21');
 
-  // クライアント Marc とのビデオ通話
+  // クライアント Marc とのビデオ通話（病院の説明）
   G.talk('marc', null, { video: true });
-  await G.seq(range('P0-M', 1, 6));
+  await G.seq(['P0-M01', 'P0-M02', 'P0-M02b', 'P0-M02c', 'P0-M02d', 'P0-M03', 'P0-M04', 'P0-M05', 'P0-M06']);
   G.endTalk();
 
   await G.say('P0-T01');
@@ -126,6 +142,8 @@ async function phase1() {
   G.setPhase(1);
   G.enterRoom('p1');
   Sound.bgm('day');
+  // 病院に着いたときの状況説明
+  await G.seq(['P1-A01', 'P1-A02', 'P1-A03']);
   await G.say('P1-00');
   await G.explore();
   await G.say('P1-END-01');
@@ -150,7 +168,7 @@ async function phase2() {
   G.setPhase(2);
   G.enterRoom('p2');
   Sound.bgm('night');
-  await G.seq(['P2-00', 'P2-01', 'P2-02', 'P2-03']);
+  await G.seq(['P2-00', 'P2-A01', 'P2-A02', 'P2-01', 'P2-02', 'P2-03']);
   await G.explore();
   await G.seq(range('P2-END-', 1, 3));
   G.card('voix');
@@ -174,9 +192,11 @@ async function phase2() {
   G.talk('marc', null, { video: true });
   await G.seq(['P2-END-11', 'P2-END-12']);
   G.endTalk();
-  await G.say('P2-END-13');
+  await heleneMessage('P2-END-13');
   Sound.sfx('glitch');
   await G.seq(range('P2-END-', 14, 17));
+  // MUSEの変化に戸惑う主人公
+  await G.seq(range('P2-END-', 18, 23));
   G.clearLine();
 }
 
@@ -184,12 +204,12 @@ async function phase3() {
   G.setPhase(3);
   G.enterRoom('p3');
   Sound.bgm('tense');
-  await G.seq(['P3-00', 'P3-01', 'P3-02']);
+  await G.seq(['P3-00', 'P3-A01', 'P3-A02', 'P3-01', 'P3-02', 'P3-02b', 'P3-02c']);
   Sound.sfx('glitch');
   G.optimize();
   await G.say('P3-03');
   G.startRunaway();
-  await G.say('P3-04');
+  await G.seq(['P3-04', 'P3-04b']);
   await G.explore();
 }
 
@@ -199,6 +219,8 @@ async function finale() {
   G.card('mediateur');
   await G.seq(['P3-FINAL-01', 'P3-FINAL-01b', 'P3-FINAL-01c', 'P3-FINAL-01d', 'P3-FINAL-02']);
   G.card(null);
+  // 「私たちの声で」：言葉も抑揚も、MUSEが指示してくる
+  await G.seq(['P3-FINAL-02b', 'P3-FINAL-02c']);
   const r = await G.finalChoice();
   if (r === 'ai') return badEnd();
   if (G.S.clues.size >= 2) return happyEnd();
@@ -210,7 +232,7 @@ async function badEnd() {
   G.talk('marc');
   await G.say('E-BAD-02');
   G.endTalk();
-  await G.say('E-BAD-03');
+  await heleneMessage('E-BAD-03');
   Sound.bgm('cold');
   G.stopRunaway();
   await G.say('E-BAD-04');
@@ -249,7 +271,9 @@ async function happyEnd() {
   G.endTalk();
   await G.say('E-HAPPY-12');
   G.enterRoom('p2', 3, { bare: true });
-  await G.seq(range('E-HAPPY-', 13, 16));
+  await G.seq(range('E-HAPPY-', 13, 14));
+  await heleneMessage('E-HAPPY-15');
+  await G.say('E-HAPPY-16');
   G.endScreen('E-HAPPY-17', 'END-DESC-HAPPY');
 }
 
@@ -264,7 +288,9 @@ async function voidEnd() {
   G.talk('marc');
   await G.say('E-VOID-07');
   G.endTalk();
-  await G.seq(range('E-VOID-', 8, 12));
+  await G.seq(range('E-VOID-', 8, 10));
+  await heleneMessage('E-VOID-11');
+  await G.say('E-VOID-12');
   G.endScreen('E-VOID-13', 'END-DESC-VOID');
 }
 

@@ -34,6 +34,7 @@ const STR = {
     2: { ja: '協働モード', fr: 'mode collaboration', en: 'collaboration mode' },
     3: { ja: '自律モード', fr: 'mode autonome', en: 'autonomous mode' },
   },
+  arAgree: { ja: '合意確率', fr: "Probabilité d'accord", en: 'Agreement odds' },
   popups: [
     { ja: '推定感情を更新', fr: "Mise à jour de l'émotion estimée", en: 'Updating emotion estimate' },
     { ja: '最適な発話を生成中…', fr: "Génération de l'énoncé optimal…", en: 'Generating optimal utterance…' },
@@ -89,6 +90,7 @@ const CHARS = {
 };
 
 const BIO = {
+  helene0: { temp: 36.5, pulse: 74, emo: { ja: '期待', fr: 'attente', en: 'expectation' } },
   nadia1: { temp: 36.9, pulse: 88, emo: { ja: '警戒', fr: 'méfiance', en: 'wariness' } },
   josiane1: { temp: 37.1, pulse: 94, emo: { ja: '苛立ち', fr: 'irritation', en: 'irritation' } },
   camille2: { temp: 37.4, pulse: 102, emo: { ja: '疲労・不安', fr: 'fatigue, anxiété', en: 'fatigue, anxiety' } },
@@ -196,7 +198,9 @@ const LINE_FACES = {
   'P0-B08': ['helene', 'normal'],
   'P0-B12': ['helene', 'smile'],
   'P0-B21': ['helene', 'smile'],
+  'P0-B13c': ['helene', 'normal'],
   'P0-M01': ['marc', 'normal'],
+  'P0-M02c': ['marc', 'frown'],
   'P0-M03': ['marc', 'frown'],
   'P0-M06': ['marc', 'normal'],
   // PHASE 1：Nadia
@@ -230,6 +234,7 @@ const LINE_FACES = {
   'P2-TEST-05': ['camille', 'relieved'],
   'P2-END-11': ['marc', 'normal'],
   'P2-END-12': ['marc', 'frown'],
+  'P2-END-13': ['helene', 'serious'],
   // PHASE 3：Nadia
   'P3-N-01': ['nadia', 'troubled'],
   'P3-N-02': ['nadia', 'soft'],
@@ -245,6 +250,9 @@ const LINE_FACES = {
   'P3-M-10-S-r2': ['marc', 'normal'],
   // エンディング
   'E-BAD-02': ['marc', 'pleased'],
+  'E-BAD-03': ['helene', 'smile'],
+  'E-HAPPY-15': ['helene', 'smile'],
+  'E-VOID-11': ['helene', 'serious'],
   'E-BAD-S03': ['camille', 'normal'],
   'E-BAD-S05': ['camille', 'tired'],
   'E-BAD-08': ['camille', 'normal'],
