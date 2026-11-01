@@ -75,6 +75,7 @@ const G = (() => {
   function say(key, vars) {
     return new Promise((resolve) => {
       const e = SCRIPT[key] || { sp: 'sys' };
+      if (LINE_FACES[key]) face(...LINE_FACES[key]);
       line = { key, vars, sp: e.sp, mono: !!e.mono, shown: 0 };
       if (e.sp === 'ai') pushLog(key, vars);
       clearInterval(typer);
@@ -282,9 +283,23 @@ const G = (() => {
   }
 
   // ---------- 人物 ----------
+  const faces = {}; // 人物ごとの今の表情（なければ normal）
+
+  function imageOf(who) {
+    const set = CHAR_IMAGES[who];
+    return set ? set[faces[who]] || set.normal : null;
+  }
+
+  // 表情を変える。会話中の人物ならその場で差し替える
+  function face(who, expr) {
+    faces[who] = expr;
+    const img = $('#char .figure-img');
+    if (S.talking === who && img) img.src = imageOf(who);
+  }
+
   // 立ち絵の画像があればそれを、なければ仮の図形を出す
   function figure(who) {
-    const src = CHAR_IMAGES[who];
+    const src = imageOf(who);
     if (src) {
       const img = el('img', 'figure-img');
       img.src = src;
@@ -981,7 +996,7 @@ const G = (() => {
   return {
     S, param: (k) => params.get(k), init, debugPreset,
     say, seq, clearLine, ask, finalChoice, card,
-    talk, endTalk, enterRoom, explore, setPhase, aiOn, addClue, feed,
+    talk, endTalk, face, enterRoom, explore, setPhase, aiOn, addClue, feed,
     seedSynth, optimize, restoreSynth,
     title, consent, cinematic, endScreen, startRunaway, stopRunaway, setCalm,
   };

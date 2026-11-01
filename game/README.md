@@ -37,10 +37,10 @@ node game/tools/build-script.js
 ## 素材の差し替え
 
 - **背景**：`game/assets/BG-*.jpeg`。`data.js` の各部屋の `img` で指定している。当たり判定の `rect` は背景画像に対する %
-- **人物**：白背景の立ち絵を `game/assets/` に置き、次のコマンドで背景を透明にする。結果は `game/assets/chars/` に出るので、`data.js` の `CHAR_IMAGES` に追加する。画像のない人物は仮の図形で表示される
+- **人物**：白背景の立ち絵（`CH-人物-表情.jpeg`）を `game/assets/chars/` に置き、次のコマンドで背景を透明なPNGにする。`data.js` の `CHAR_IMAGES` に表情ごとに登録し、どのセリフでどの表情にするかは `LINE_FACES` に書く。腕と体のすき間など、外周とつながっていない白が残ったときは、`cutout.py` の `HOLES` にその位置を書く
 
 ```
-python game/tools/cutout.py game/assets/CH-josiane-normal.png
+python game/tools/cutout.py game/assets/chars/*.jpeg
 ```
 
 - **イラスト**：`cards.js` の `CARD_IMAGES` に `mug: 'assets/cards/mug.png'` のように書くと、仮のSVGの代わりに画像が出る

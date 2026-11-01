@@ -84,6 +84,8 @@ const CHARS = {
   josiane: { name: 'Josiane', color: '#b0704f', persona: 'veteran' },
   camille: { name: 'Camille', color: '#5f9a8c', persona: 'junior' },
   staff: { name: '', color: '#9aa3ad', persona: 'junior' },
+  runner: { name: '', color: '#9aa3ad', persona: 'junior' },
+  ivnurse: { name: '', color: '#9aa3ad', persona: 'junior' },
 };
 
 const BIO = {
@@ -95,11 +97,16 @@ const BIO = {
 };
 
 // 立ち絵（白背景を透明にしたもの。作り直すときは python game/tools/cutout.py で変換する）
-// ここにない人物は、仮の図形で表示される
+// 人物ごとに表情 → 画像。表情は main.js の G.face() で切り替える。ここにない人物は仮の図形で表示される
+const charImg = (id) => `assets/chars/CH-${id}.png`;
 const CHAR_IMAGES = {
-  nadia: 'assets/chars/CH-nadia-normal.png',
-  helene: 'assets/chars/CH-helene-normal.png',
-  marc: 'assets/chars/CH-marc-normal.png',
+  helene: { normal: charImg('helene-normal'), smile: charImg('helene-smile'), serious: charImg('helene-serious') },
+  marc: { normal: charImg('marc-normal'), pleased: charImg('marc-pleased'), frown: charImg('marc-frown') },
+  nadia: { normal: charImg('nadia-normal'), troubled: charImg('nadia-troubled'), soft: charImg('nadia-soft') },
+  josiane: { normal: charImg('josiane-normal'), blush: charImg('josiane-blush'), smile: charImg('josiane-smile') },
+  camille: { normal: charImg('camille-normal'), tired: charImg('camille-tired'), relieved: charImg('camille-relieved') },
+  runner: { normal: charImg('staff-running') },
+  ivnurse: { normal: charImg('staff-iv') },
 };
 
 // 部屋の配置。rect は背景画像に対する % [x, y, 幅, 高さ]
@@ -126,11 +133,11 @@ const ROOMS = {
         { type: 'data', obj: 'P1-OBJ-board', gain: 10, rect: [56, 29, 25, 26], feed: { persona: 'admin', stage: 'records' }, label: { ja: '掲示板', fr: "Panneau d'affichage", en: 'Notice board' } },
       ] },
       { bg: 'BG-P1-back', img: 'assets/BG-P1-back.jpeg', spots: [
-        { type: 'staff', who: 'staff', obj: 'P1-OBJ-staff', gain: 10, rect: [46, 36, 6, 36], feed: { persona: 'junior', stage: 'care' }, label: { ja: '若手スタッフ', fr: 'Jeune soignant', en: 'Young nurse' } },
+        { type: 'staff', who: 'runner', obj: 'P1-OBJ-staff', gain: 10, rect: [44, 38, 10, 34], feed: { persona: 'junior', stage: 'care' }, label: { ja: '若手スタッフ', fr: 'Jeune soignant', en: 'Young nurse' } },
         { type: 'data', obj: 'P1-OBJ-call', gain: 10, rect: [85, 28, 12, 43], feed: { stage: 'care', insight: true }, label: { ja: 'ナースコール', fr: 'Appels patients', en: 'Call panel' } },
       ] },
       { bg: 'BG-P1-left', img: 'assets/BG-P1-left.jpeg', spots: [
-        { type: 'person', who: 'josiane', conv: 'josiane1', rect: [80, 26, 9, 76] },
+        { type: 'person', who: 'josiane', conv: 'josiane1', rect: [66, 26, 9, 76] },
         { type: 'noise', obj: 'P1-OBJ-mug', clue: 1, card: 'mug', rect: [51, 55, 13, 11], feed: { low: 3 }, label: { ja: 'マグカップ', fr: 'Tasses', en: 'Mugs' } },
       ] },
     ],
@@ -145,7 +152,7 @@ const ROOMS = {
       ] },
       { bg: 'BG-P2-right', img: 'assets/BG-P2-right.jpeg', spots: [
         { type: 'data', obj: 'P2-OBJ-tablet', gain: 15, rect: [45, 49, 12, 16], feed: { persona: 'junior', stage: 'handover', insight: true }, label: { ja: '申し送りタブレット', fr: 'Tablette', en: 'Handover tablet' } },
-        { type: 'staff', who: 'staff', obj: 'P2-OBJ-nurse', gain: 10, rect: [80, 30, 8, 70], feed: { persona: 'junior', stage: 'care' }, label: { ja: '点滴を準備する看護師', fr: 'Infirmière', en: 'Nurse' } },
+        { type: 'staff', who: 'ivnurse', obj: 'P2-OBJ-nurse', gain: 10, rect: [3, 26, 12, 72], feed: { persona: 'junior', stage: 'care' }, label: { ja: '点滴を準備する看護師', fr: 'Infirmière', en: 'Nurse' } },
       ] },
       { bg: 'BG-P2-back', img: 'assets/BG-P2-back.jpeg', spots: [
         { type: 'data', obj: 'P2-OBJ-vending', gain: 5, rect: [76, 23, 19, 62], feed: { stage: 'break' }, label: { ja: '自動販売機', fr: 'Distributeur', en: 'Vending machine' } },
@@ -178,6 +185,74 @@ const ROOMS = {
       ] },
     ],
   },
+};
+
+// セリフが表示されるときに、その人物の表情を変える（セリフID → [人物, 表情]）
+const LINE_FACES = {
+  // プロローグ
+  'P0-B02': ['helene', 'normal'],
+  'P0-B05': ['helene', 'smile'],
+  'P0-B06': ['helene', 'serious'],
+  'P0-B08': ['helene', 'normal'],
+  'P0-B12': ['helene', 'smile'],
+  'P0-B21': ['helene', 'smile'],
+  'P0-M01': ['marc', 'normal'],
+  'P0-M03': ['marc', 'frown'],
+  'P0-M06': ['marc', 'normal'],
+  // PHASE 1：Nadia
+  'P1-N-00': ['nadia', 'normal'],
+  'P1-N-00c': ['nadia', 'troubled'],
+  'P1-N-01-A-r1': ['nadia', 'troubled'],
+  'P1-N-01-S-r1': ['nadia', 'normal'],
+  'P1-N-01-S-r2': ['nadia', 'troubled'],
+  'P1-N-02-A-r1': ['nadia', 'troubled'],
+  'P1-N-02-S-r1': ['nadia', 'soft'],
+  // PHASE 1：Josiane
+  'P1-J-00': ['josiane', 'normal'],
+  'P1-J-04-S-r1': ['josiane', 'blush'],
+  // PHASE 1：テスト
+  'P1-TEST-02': ['josiane', 'normal'],
+  'P1-TEST-04': ['nadia', 'troubled'],
+  // PHASE 2：Camille
+  'P2-C-01': ['camille', 'tired'],
+  'P2-C-05-S-r1': ['camille', 'normal'],
+  'P2-C-06-pre': ['camille', 'tired'],
+  'P2-C-06-pre2': ['camille', 'normal'],
+  'P2-C-06-A-r1': ['camille', 'tired'],
+  'P2-C-06-S-r2': ['camille', 'relieved'],
+  'P2-C-07-pre': ['camille', 'normal'],
+  'P2-C-07-A-r1': ['camille', 'relieved'],
+  'P2-C-07-A-r2': ['camille', 'tired'],
+  'P2-C-07-S-r2': ['camille', 'tired'],
+  // PHASE 2：テストと、経営からの圧力
+  'P2-TEST-02': ['camille', 'normal'],
+  'P2-TEST-04': ['josiane', 'smile'],
+  'P2-TEST-05': ['camille', 'relieved'],
+  'P2-END-11': ['marc', 'normal'],
+  'P2-END-12': ['marc', 'frown'],
+  // PHASE 3：Nadia
+  'P3-N-01': ['nadia', 'troubled'],
+  'P3-N-02': ['nadia', 'soft'],
+  'P3-N-03': ['nadia', 'troubled'],
+  'P3-N-08-A-r1': ['nadia', 'normal'],
+  'P3-N-08-S-r1': ['nadia', 'soft'],
+  'P3-N-09-pre': ['nadia', 'troubled'],
+  'P3-N-09-S-r2': ['nadia', 'soft'],
+  // PHASE 3：Marc
+  'P3-M-01': ['marc', 'normal'],
+  'P3-M-10-A-r1': ['marc', 'pleased'],
+  'P3-M-10-S-r1': ['marc', 'frown'],
+  'P3-M-10-S-r2': ['marc', 'normal'],
+  // エンディング
+  'E-BAD-02': ['marc', 'pleased'],
+  'E-BAD-S03': ['camille', 'normal'],
+  'E-BAD-S05': ['camille', 'tired'],
+  'E-BAD-08': ['camille', 'normal'],
+  'E-HAPPY-09': ['josiane', 'blush'],
+  'E-HAPPY-10': ['marc', 'normal'],
+  'E-HAPPY-11': ['nadia', 'soft'],
+  'E-VOID-06': ['josiane', 'normal'],
+  'E-VOID-07': ['marc', 'frown'],
 };
 
 const PHASES = {
