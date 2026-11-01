@@ -96,9 +96,9 @@
 - EN：*Even now that AI handles the research and the paperwork, I've always believed that listening to people in the field was still my part.*
 
 **P0-I07** 主人公（独白）
-- JA：*俺はデザインコンサルタント。そして今日から、新しい相棒ができる。*
-- FR：*Je suis consultant en design. Et à partir d'aujourd'hui, j'ai un nouveau partenaire.*
-- EN：*I'm a design consultant. And starting today, I have a new partner.*
+- JA：*そして今日から、新しい相棒ができる。*
+- FR：*Et à partir d'aujourd'hui, j'ai un nouveau partenaire.*
+- EN：*And starting today, I have a new partner.*
 
 ---
 

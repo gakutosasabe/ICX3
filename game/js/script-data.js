@@ -59,10 +59,10 @@ window.SCRIPT = {
  },
  "P0-I07": {
   "sp": "me",
-  "ja": "俺はデザインコンサルタント。そして今日から、新しい相棒ができる。",
+  "ja": "そして今日から、新しい相棒ができる。",
   "mono": true,
-  "fr": "Je suis consultant en design. Et à partir d'aujourd'hui, j'ai un nouveau partenaire.",
-  "en": "I'm a design consultant. And starting today, I have a new partner."
+  "fr": "Et à partir d'aujourd'hui, j'ai un nouveau partenaire.",
+  "en": "And starting today, I have a new partner."
  },
  "P0-B01": {
   "sp": "narr",
